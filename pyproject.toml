@@ -1,0 +1,22 @@
+[project]
+name = "personal-finance-data-platform"
+version = "0.1.0"
+description = "A self-hosted platform that provides a holistic view on your personal finance: acount balances, transactions, etc."
+authors = [
+    {name = "Arthur SKOBNIKOV",email = "arthur.skobnikov@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    
+]
+[tool.poetry.dependencies]
+ibapi = { path = "vendor/ibapi-10.37.2-py3-none-any.whl" }
+
+[tool.poetry]
+packages = [{include = "personal_finance_data_platform", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
