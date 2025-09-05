@@ -11,10 +11,13 @@ dependencies = [
     
 ]
 [tool.poetry.dependencies]
-ibapi = { path = "vendor/ibapi-10.37.2-py3-none-any.whl" }
+ibapi = { path = "data_ingestion/extractors/ibkr/vendor/ibapi-10.37.2-py3-none-any.whl" }
 
 [tool.poetry]
-packages = [{include = "personal_finance_data_platform", from = "src"}]
+packages = [
+    {include = "extractors", from = "data_ingestion"},
+    #{include = "loaders", from = "data_ingestion"}
+]
 
 
 [build-system]

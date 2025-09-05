@@ -16,7 +16,7 @@ protobuf = "5.29.3"
 
 [package.source]
 type = "file"
-url = "vendor/ibapi-10.37.2-py3-none-any.whl"
+url = "data_ingestion/extractors/ibkr/vendor/ibapi-10.37.2-py3-none-any.whl"
 
 [[package]]
 name = "protobuf"
@@ -42,4 +42,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10"
-content-hash = "3226afd59f0ad689ebb8c6801cb8f1cef83982405680f4f43e7478905d38f83c"
+content-hash = "ad5346478ff941bdaa00cbe7693f031a419ff9c547fa921ef7d1a30ad6df7924"
