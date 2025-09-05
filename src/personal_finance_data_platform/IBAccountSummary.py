@@ -1,5 +1,6 @@
 from ibapi.client import EClient
 from ibapi.wrapper import EWrapper
+import json
 import threading
 
 HOST = "127.0.0.1"      # localhost
@@ -48,13 +49,9 @@ class IBAccountSummary(EWrapper, EClient):
 
     def accountSummaryEnd(self, reqId: int):
         super().accountSummaryEnd(reqId)
-        print("Account Summary End. Final Data:")
         # Now that all data is received, add the timestamp and print
         for account_id in self.accounts_data:
             self.accounts_data[account_id]['time'] = self.current_time
-        
-        import json
-        print(json.dumps(self.accounts_data, indent=2))
 
         # Signal that the data is received and we can disconnect
         self.account_summary_event.set()
@@ -97,8 +94,11 @@ def main():
 
     # 9. (Main Thread) The event is now "set", so `wait()` unblocks and the main
     #    script continues execution, now confident that all data is received.
+
     app.disconnect()
-    print("Disconnected.")
+    print("Disconnected.\n")
+    print("Extracted Data:")
+    print(json.dumps(app.accounts_data, indent=2))
 
 if __name__ == "__main__":
     main()
