@@ -12,7 +12,7 @@ def write_json_to_datalake(data:dict, namespace, stream, datalake_root):
 	try:
 		os.makedirs(folder, exist_ok=True)
 		timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-		filename = f"{stream}_{timestamp}.json"
+		filename = f"{timestamp}.json"
 		filepath = os.path.join(folder, filename)
 		with open(filepath, "w", encoding="utf-8") as f:
 			json.dump(data, f, ensure_ascii=False, indent=2)
