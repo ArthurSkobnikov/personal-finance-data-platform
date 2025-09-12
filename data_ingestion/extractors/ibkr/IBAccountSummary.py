@@ -98,7 +98,4 @@ def main():
     app.disconnect()
     print("Disconnected.\n")
     print("Extracted Data:")
-    print(json.dumps(app.accounts_data, indent=2))
-
-if __name__ == "__main__":
-    main()
+    return app.accounts_data
