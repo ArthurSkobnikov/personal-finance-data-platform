@@ -82,7 +82,6 @@ def main():
 
     # 5. (Main Thread) Now, the main thread pauses and waits. The `wait()` method
     #    blocks execution until another thread calls `app.account_summary_event.set()`.
-    print("Requesting account summary...")
     app.account_summary_event.wait(timeout=10) # Wait for up to 10 seconds
 
     # --- Meanwhile, in the background ---
@@ -96,6 +95,4 @@ def main():
     #    script continues execution, now confident that all data is received.
 
     app.disconnect()
-    print("Disconnected.\n")
-    print("Extracted Data:")
     return app.accounts_data
